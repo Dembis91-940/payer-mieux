@@ -39,9 +39,12 @@
     --or: #d4a017;
     --or-clair: #e7c766;
     --or-fonce: #a87c0d;
+    --vert: #2f7d5f;
+    --vert-clair: #e7f2ec;
+    --grad-cta: linear-gradient(135deg, #1e3a8a 0%, #2f56b8 100%);
     --encre: #232837;
     --texte: #3d4351;
-    --discret: #6b7280;
+    --discret: #5b6470;
     --filet: rgba(212,160,23,.4);
     --filet-fort: rgba(212,160,23,.65);
     --bleu-filet: rgba(30,58,138,.18);
@@ -173,10 +176,10 @@
     transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
   }
   .bouton-principal{
-    background:var(--bleu);color:var(--blanc);border:1px solid var(--bleu);
-    box-shadow:0 10px 24px rgba(30,58,138,.22);
+    background:var(--grad-cta);color:var(--blanc);border:1px solid rgba(30,58,138,.9);
+    box-shadow:0 10px 24px rgba(30,58,138,.28);
   }
-  .bouton-principal:hover{background:var(--bleu-fonce);transform:translateY(-1px);box-shadow:0 14px 28px rgba(30,58,138,.28);}
+  .bouton-principal:hover{background:var(--grad-cta);filter:brightness(1.12);transform:translateY(-1px);box-shadow:0 14px 32px rgba(30,58,138,.36);}
   .bouton-contour{
     color:var(--bleu);border:1.5px solid var(--or);background:transparent;
   }
@@ -503,14 +506,14 @@
   <div class="hero-interne">
     <div>
       <p class="sur-titre">Stratégie salariale &amp; rétention</p>
-      <h2>« J'ai un employé qui gagne <span class="chiffres">90&nbsp;000&nbsp;€</span> quand le marché paie <span class="chiffres">55&nbsp;000&nbsp;€</span>. Et c'est volontaire. »</h2>
-      <p class="sous-titre">Un employé qui reste apprend vos processus, connaît vos clients et s'améliore chaque année. Ce playbook vous montre pourquoi <strong>payer plus est la décision la plus rentable</strong> de votre politique salariale — et comment l'appliquer sans déstabiliser votre entreprise.</p>
+      <h2>« Un de mes postes clés gagne <span class="chiffres">90&nbsp;000&nbsp;€</span> quand le marché paie <span class="chiffres">55&nbsp;000&nbsp;€</span>. Et c'est volontaire. »</h2>
+      <p class="sous-titre">Chaque départ de poste clé vous coûte <strong>6 à 9 mois de salaire</strong> — recrutement, formation, productivité perdue. Ce playbook vous montre pourquoi <strong>payer 20&nbsp;% au-dessus du marché est votre investissement le plus rentable</strong> — et comment l'appliquer sans déstabiliser votre entreprise.</p>
       <div class="filet-or"></div>
       <div class="actions-hero">
         <a href="#offres" class="bouton bouton-principal">Découvrir le playbook</a>
         <a href="#methode" class="bouton bouton-contour">La méthode en 3 idées</a>
       </div>
-      <p class="note-hero">Playbook numérique · Livraison immédiate · À partir de <strong>27&nbsp;€</strong></p>
+      <p class="note-hero">Playbook numérique · Livraison immédiate · À partir de <strong>27&nbsp;€</strong> · <a href="outil.html" style="color:var(--or-fonce);font-weight:600;text-decoration:underline">Calculez le coût d'un départ →</a></p>
     </div>
 
     <div class="registre" aria-label="Comparaison de salaires">
@@ -565,22 +568,22 @@
     <div class="grille-arguments">
       <article class="carte-argument reveal">
         <span class="numero-argument">Idée n° 1</span>
-        <h3>Le coût réel d'un remplacement : <span>6 à 9 mois de salaire</span></h3>
-        <p>Le départ d'un poste clé ne coûte pas « un salaire pendant 2 mois ». Il coûte : la recherche et le recrutement (cabinet, annonces, votre temps de direction), la formation, la perte de productivité pendant 6 à 12 mois, les erreurs du nouvel arrivant, et l'impact sur l'équipe et les clients. Additionnez : c'est 6 à 9 mois de salaire. Une augmentation de 20&nbsp;% représente rarement plus de 3 mois. L'arithmétique est impitoyable.</p>
+        <h3>Un départ coûte <span>6 à 9 mois de salaire</span></h3>
+        <p>Recrutement, formation, productivité perdue pendant 6 à 12 mois, erreurs du nouvel arrivant, impact sur l'équipe et les clients : additionnez, et le départ d'un poste clé ne coûte pas « deux mois de salaire ». Il en coûte <strong>six à neuf</strong>. Une augmentation de 20&nbsp;%, elle, coûte rarement plus de 3 mois. L'arithmétique est impitoyable — et elle joue en votre faveur.</p>
         <p class="chiffre-cle">Sur un poste à 50&nbsp;000&nbsp;€ : un départ coûte <strong>25&nbsp;000 à 40&nbsp;000&nbsp;€</strong>.</p>
       </article>
 
       <article class="carte-argument reveal">
         <span class="numero-argument">Idée n° 2</span>
-        <h3>L'employé qui reste <span>s'améliore chaque année</span></h3>
-        <p>Un nouvel embauché vous coûte de l'argent pendant des mois. Un collaborateur qui reste, lui, apprend vos processus, connaît vos clients par leur prénom, anticipe vos problèmes et forme les nouveaux. Sa valeur augmente chaque année — votre grille, elle, plafonne. C'est la seule ressource de votre entreprise qui prend de la valeur en vieillissant, et vous la sous-payez.</p>
-        <p class="chiffre-cle">Ancienneté moyenne d'un poste clé chez vous : <strong>combien d'années de valeur perdue ?</strong></p>
+        <h3>L'ancienneté paie : <span>la valeur augmente chaque année</span></h3>
+        <p>Un nouvel embauché vous coûte de l'argent pendant des mois. Un collaborateur fidèle connaît vos clients par leur prénom, anticipe vos problèmes, forme les nouveaux. Sa valeur croît chaque année — votre grille, elle, plafonne. C'est la seule ressource de votre entreprise qui prend de la valeur en vieillissant, et vous la sous-payez.</p>
+        <p class="chiffre-cle">Chaque année d'ancienneté perdue est de la valeur <strong>qui vous a déjà été payée</strong>.</p>
       </article>
 
       <article class="carte-argument reveal">
         <span class="numero-argument">Idée n° 3</span>
-        <h3>Payer 20&nbsp;% au-dessus du marché, <span>c'est économiser</span></h3>
-        <p>La prime de fidélité la plus efficace n'est pas une prime : c'est un salaire qui dit « je sais ce que tu vaux ici ». 20&nbsp;% au-dessus du marché sur les postes clés coûte quelques milliers d'euros par an — et désamorce les offres des chasseurs de têtes, les comparatifs Glassdoor et les conversations de couloir. C'est la dépense qui protège toutes les autres.</p>
+        <h3>20&nbsp;% au-dessus du marché, <span>la dépense qui protège tout</span></h3>
+        <p>La prime de fidélité la plus efficace n'est pas une prime : c'est un salaire qui dit « je sais ce que tu vaux ici ». Quelques milliers d'euros par an désamorcent les chasseurs de têtes, les comparatifs Glassdoor et les conversations de couloir. C'est la dépense qui protège toutes les autres — et de loin la moins chère.</p>
         <p class="chiffre-cle">20&nbsp;% sur 50&nbsp;000&nbsp;€ = <strong>10&nbsp;000&nbsp;€/an</strong>, contre 25&nbsp;000 à 40&nbsp;000&nbsp;€ pour un départ.</p>
       </article>
     </div>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur : combien vous coûte le départ d'un poste clé ? — Payez Mieux</title>
+<meta name="description" content="Calculez en 30 secondes le coût réel d'un départ de poste clé : recrutement, formation, productivité perdue. Comparez avec une augmentation de 20 %.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivoire:#fbf8f2; --ivoire-2:#f6f1e6; --blanc:#fffdf8;
+    --bleu:#1e3a8a; --bleu-fonce:#16295e; --bleu-nuit:#101d45;
+    --or:#d4a017; --or-clair:#e7c766; --or-fonce:#a87c0d;
+    --vert:#2f7d5f; --vert-clair:#e7f2ec;
+    --grad-cta:linear-gradient(135deg,#1e3a8a 0%,#2f56b8 100%);
+    --texte:#3d4351; --discret:#5b6470;
+    --filet:rgba(212,160,23,.4); --bleu-filet:rgba(30,58,138,.18);
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:"Source Sans 3","Helvetica Neue",Arial,sans-serif;
+    --radius:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--ivoire);color:var(--texte);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+  .bande-or{height:5px;background:linear-gradient(90deg,var(--or-fonce),var(--or) 30%,var(--or-clair) 50%,var(--or) 70%,var(--or-fonce))}
+  .interne{max-width:980px;margin:0 auto;padding:0 24px}
+  header{padding:26px 0;border-bottom:1px solid var(--bleu-filet);background:var(--blanc)}
+  .en-tete{max-width:980px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:14px}
+  .monogramme{width:44px;height:44px;background:var(--grad-cta);color:#fff;font-family:var(--serif);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;border-radius:8px;box-shadow:0 6px 16px rgba(30,58,138,.25)}
+  .marque h1{font-family:var(--serif);font-size:20px;color:var(--bleu-fonce);font-weight:600}
+  .marque p{font-size:12.5px;color:var(--discret);letter-spacing:.6px;text-transform:uppercase}
+  header a.retour{margin-left:auto;color:var(--bleu);font-weight:600;text-decoration:none;font-size:15px}
+  header a.retour:hover{color:var(--or-fonce)}
+  .hero-outil{padding:64px 0 20px;text-align:center}
+  .sur-titre{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--or-fonce);margin-bottom:18px}
+  .sur-titre::before,.sur-titre::after{content:"";width:36px;height:1.5px;background:var(--or)}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.4vw,42px);color:var(--bleu-fonce);line-height:1.22;max-width:820px;margin:0 auto}
+  h2 em{font-style:italic;color:var(--or-fonce)}
+  .hero-outil .sous{max-width:640px;margin:18px auto 0;font-size:17.5px}
+  .hero-outil .sous strong{color:var(--bleu)}
+  .cadre{background:var(--blanc);border:1px solid var(--bleu-filet);border-radius:var(--radius);box-shadow:0 30px 60px rgba(22,41,94,.08);padding:44px 44px 40px;margin:36px 0 12px;position:relative}
+  .cadre::before{content:"";position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid var(--bleu-filet);border-radius:8px;pointer-events:none}
+  .grille-champs{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+  .champ label{display:block;font-size:14.5px;font-weight:600;color:var(--bleu-fonce);margin-bottom:8px}
+  .champ label span{color:var(--discret);font-weight:400}
+  .champ input[type=number]{width:100%;padding:13px 16px;font-size:17px;font-family:var(--sans);border:1.5px solid rgba(30,58,138,.25);border-radius:8px;background:var(--ivoire);color:var(--bleu-fonce);font-weight:600}
+  .champ input[type=number]:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 3px rgba(212,160,23,.18)}
+  .champ input[type=range]{width:100%;accent-color:var(--or);cursor:pointer;height:6px}
+  .range-vals{display:flex;justify-content:space-between;font-size:13px;color:var(--discret);margin-top:4px}
+  .plein{grid-column:1/-1}
+  .bouton{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:17px;padding:16px 34px;border-radius:999px;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s,filter .2s;border:none;white-space:nowrap}
+  .bouton-principal{background:var(--grad-cta);color:#fff;box-shadow:0 10px 24px rgba(30,58,138,.28)}
+  .bouton-principal:hover{transform:translateY(-2px);filter:brightness(1.12);box-shadow:0 14px 32px rgba(30,58,138,.36)}
+  .centre{text-align:center;margin-top:34px}
+  .resultat{display:none;margin-top:36px;border-top:1.5px solid var(--filet);padding-top:30px}
+  .resultat.visible{display:block;animation:apparaitre .35s ease}
+  @keyframes apparaitre{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .carte-resultat{background:var(--ivoire-2);border:1px solid var(--filet);border-radius:var(--radius);padding:28px 30px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+  .carte-resultat .b{text-align:center}
+  .carte-resultat .b .lib{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--discret)}
+  .carte-resultat .b .montant{font-family:var(--serif);font-weight:700;font-size:30px;color:var(--bleu-fonce);margin-top:6px;line-height:1.1}
+  .carte-resultat .b.cle .montant{color:var(--or-fonce);font-size:34px}
+  .carte-resultat .b .detail{font-size:13.5px;color:var(--discret);margin-top:6px}
+  .gain{display:flex;align-items:center;gap:18px;background:var(--vert-clair);border:1px solid rgba(47,125,95,.35);border-radius:var(--radius);padding:22px 26px;margin-top:20px}
+  .gain .icone{font-size:30px}
+  .gain .texte{font-size:16.5px;color:var(--vert)}
+  .gain .texte strong{font-family:var(--serif);font-size:23px;color:#1d5c44}
+  .note{font-size:14px;color:var(--discret);text-align:center;margin:22px auto 0;max-width:720px}
+  .note strong{color:var(--bleu)}
+  .bloc-cta{background:var(--bleu-fonce);border-radius:var(--radius);padding:44px;text-align:center;margin:48px 0 0;color:#fffdf8}
+  .bloc-cta h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.25}
+  .bloc-cta h3 em{font-style:italic;color:var(--or-clair)}
+  .bloc-cta p{margin:14px auto 26px;max-width:560px;color:rgba(255,253,248,.85)}
+  .bloc-cta .bouton{border:2px solid var(--or-clair);background:transparent;color:#fffdf8}
+  .bloc-cta .bouton:hover{background:rgba(212,160,23,.15)}
+  .bloc-cta .prix{margin-top:18px;font-size:14.5px;color:rgba(255,253,248,.75)}
+  .bloc-cta .prix strong{color:var(--or-clair)}
+  footer{margin-top:64px;padding:28px 0;border-top:1px solid var(--bleu-filet);text-align:center;font-size:14px;color:var(--discret)}
+  footer a{color:var(--bleu);text-decoration:none;font-weight:600}
+  @media(max-width:720px){.grille-champs{grid-template-columns:1fr}.carte-resultat{grid-template-columns:1fr}.cadre{padding:32px 22px}}
+</style>
+</head>
+<body>
+<div class="bande-or"></div>
+
+<header>
+  <div class="en-tete">
+    <div class="monogramme" aria-hidden="true">PM</div>
+    <div class="marque">
+      <h1>Payez mieux, gardez vos meilleurs</h1>
+      <p>Stratégie salariale du dirigeant de PME</p>
+    </div>
+    <a class="retour" href="index.html">← Retour à l'accueil</a>
+  </div>
+</header>
+
+<main class="interne">
+  <section class="hero-outil">
+    <p class="sur-titre">Outil gratuit · 30 secondes</p>
+    <h2>Combien vous coûte vraiment <em>le départ d'un poste clé ?</em></h2>
+    <p class="sous">Rentrez trois chiffres : le calculateur additionne recrutement, formation et productivité perdue, puis compare avec ce que coûterait une <strong>augmentation de 20&nbsp;%</strong>. La réponse surprend la plupart des dirigeants.</p>
+  </section>
+
+  <div class="cadre">
+    <div class="grille-champs">
+      <div class="champ">
+        <label for="salaire">Salaire annuel brut chargé du poste <span>(€/an)</span></label>
+        <input type="number" id="salaire" value="50000" min="20000" max="200000" step="1000">
+      </div>
+      <div class="champ">
+        <label for="recrutement">Coût de recrutement <span>(% du salaire annuel)</span></label>
+        <input type="number" id="recrutement" value="30" min="10" max="80" step="5">
+      </div>
+      <div class="champ plein">
+        <label for="mois">Mois de productivité perdue (recherche + formation + montée en charge) : <strong id="moisLabel">6 mois</strong></label>
+        <input type="range" id="mois" min="3" max="12" step="1" value="6">
+        <div class="range-vals"><span>3 mois</span><span>12 mois</span></div>
+      </div>
+    </div>
+    <div class="centre">
+      <button class="bouton bouton-principal" id="calculer">Calculer le coût réel →</button>
+    </div>
+
+    <div class="resultat" id="resultat">
+      <div class="carte-resultat">
+        <div class="b">
+          <div class="lib">Coût d'un départ</div>
+          <div class="montant" id="r-depart">—</div>
+          <div class="detail">tout compris</div>
+        </div>
+        <div class="b">
+          <div class="lib">Augmentation 20&nbsp;%</div>
+          <div class="montant" id="r-augment">—</div>
+          <div class="detail">pour garder ce poste</div>
+        </div>
+        <div class="b cle">
+          <div class="lib">Votre économie</div>
+          <div class="montant" id="r-economie">—</div>
+          <div class="detail">en gardant votre collaborateur</div>
+        </div>
+      </div>
+      <div class="gain">
+        <span class="icone">🎯</span>
+        <p class="texte">Garder ce poste clé vous coûte <strong id="r-economie2">—</strong> de moins qu'un départ — <span id="r-ratio">—</span>. Une augmentation de 20&nbsp;% est la dépense de rétention la moins chère que vous puissiez faire.</p>
+      </div>
+      <p class="note">Méthode : recrutement (cabinet, annonces, temps de direction) + salaire mensuel × mois de productivité perdue + 10&nbsp;% de formation et d'erreurs du nouvel arrivant. Le playbook détaille le calcul poste par poste, avec vos vrais chiffres.</p>
+    </div>
+  </div>
+
+  <section class="bloc-cta">
+    <h3>Et maintenant, <em>la grille complète ?</em></h3>
+    <p>Ce calculateur vous donne le coût d'un départ. Le playbook vous donne la méthode complète : grille salariale personnalisée, cadre de décision, arguments chiffrés — 40 pages lisibles en un week-end.</p>
+    <a class="bouton" href="index.html#offres">Découvrir le playbook</a>
+    <p class="prix">À partir de <strong>27&nbsp;€</strong> · Livraison immédiate par email</p>
+  </section>
+</main>
+
+<footer>
+  <p><a href="index.html">Payez mieux, gardez vos meilleurs</a> · Stratégie salariale du dirigeant de PME</p>
+</footer>
+
+<script>
+(function(){
+  var fmt = function(n){ return n.toLocaleString('fr-FR') + ' €'; };
+  function calculer(){
+    var salaire = parseFloat(document.getElementById('salaire').value) || 50000;
+    var recrut = (parseFloat(document.getElementById('recrutement').value) || 30) / 100;
+    var mois = parseInt(document.getElementById('mois').value, 10) || 6;
+    var mensuel = salaire / 12;
+    var coutRecrut = salaire * recrut;
+    var coutProductivite = mensuel * mois;
+    var coutFormation = salaire * 0.10;
+    var coutDepart = Math.round(coutRecrut + coutProductivite + coutFormation);
+    var coutAugment = Math.round(salaire * 0.20);
+    var economie = coutDepart - coutAugment;
+    var ratio = (coutDepart / Math.max(coutAugment, 1)).toFixed(1);
+    document.getElementById('r-depart').textContent = fmt(coutDepart);
+    document.getElementById('r-augment').textContent = fmt(coutAugment);
+    document.getElementById('r-economie').textContent = fmt(economie);
+    document.getElementById('r-economie2').textContent = fmt(economie);
+    document.getElementById('r-ratio').textContent = ratio + ' fois moins cher';
+    document.getElementById('resultat').classList.add('visible');
+    document.getElementById('resultat').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  document.getElementById('calculer').addEventListener('click', calculer);
+  var mois = document.getElementById('mois');
+  var moisLabel = document.getElementById('moisLabel');
+  function majMois(){ moisLabel.textContent = mois.value + (mois.value > 1 ? ' mois' : ' mois'); }
+  mois.addEventListener('input', majMois);
+  majMois();
+  calculer();
+})();
+</script>
+</body>
+</html>
