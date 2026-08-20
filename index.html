@@ -601,6 +601,13 @@ nav a:hover, .nav a:hover, .main-nav a:hover {
   letter-spacing:.14em; text-transform:uppercase;
   color:#8A6508 !important;
 }
+/* Correctif AA : badge or « Le plus choisi » — texte sombre sur fond or */
+.carte-offre .tag { color:#3E2D06 !important; }
+/* Correctif AA : textes or sur ivoire (3.02-3.27) → or foncé 4.60-4.98 */
+.note-hero strong, .registre-pied strong, .note-chapitres strong, .note-offres strong, .numero-argument { color:#8A6508 !important; }
+.note-hero a { color:#8A6508 !important; } /* lien inline style var(--or-fonce) = 3.27 */
+/* Correctif AA : carte mise-en-avant — le fond glass clair écrasait le fond sombre #8A6508 (texte blanc illisible 1.14) → restauration */
+.carte-offre.mise-en-avant { background:linear-gradient(160deg,#5C4308,#3E2D06) !important; border-color:#8A6508 !important; }
 /* ---------- Champs ---------- */
 input, select, textarea, .champ, .field input, .field select, .form-box input {
   background:rgba(184, 134, 11,.07) !important;
